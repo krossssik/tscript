@@ -1,0 +1,11 @@
+.sign {
+  margin-top: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: end;
+  grid-gap: 2vh;
+}
+.sign-form {
+  display: grid;
+  grid-gap: 4vh;
+}

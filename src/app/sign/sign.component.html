@@ -1,0 +1,11 @@
+<div class="sign">
+  <h1>АВТОРИЗАЦИЯ</h1>
+  <form [formGroup]="signForm" class="sign-form">
+    <input placeholder="Name" formControlName="Name" />
+    <input type='password' placeholder="Password" formControlName="Pass" />
+  </form>
+  <button class="btn btn-info" (click)='sign()'>
+    Войти
+  </button>
+  <p *ngIf="valid"> попробуйте: имя- dima и пас- qwerty</p>
+</div>

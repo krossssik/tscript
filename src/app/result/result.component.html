@@ -1,0 +1,35 @@
+<h2>КОНТАКТЫ:</h2>
+<div>
+  <form [formGroup]="searchForm" class="sign-form">
+    <input type='text' placeholder="Name" formControlName="name" />
+    <input type='text' placeholder="Type" formControlName="type" />
+    <input type='text' placeholder="Number" formControlName="number" />
+  </form>
+  <button *ngIf="!selectedId" class="btn btn-outline btn-outline-primary" (click)='filter()'>
+    поиск
+  </button>
+  <button *ngIf="!selectedId" class="btn btn-outline btn-outline-success" (click)='addContact()'>
+    добавить
+  </button>
+  <button *ngIf="selectedId" class="btn btn-outline btn-outline-info" (click)='save()'>
+    сохранить изменения
+  </button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> name </th>
+      <th scope="col"> type </th>
+      <th scope="col"> number </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr scope="row" *ngFor="let pers of data">
+      <td>{{pers.name}}</td>
+      <td>{{pers.type}}</td>
+      <td>{{pers.number}}</td>
+      <td><button class="btn btn-danger" (click)='delete(pers)'>удалить</button></td>
+      <td><button class="btn btn-info" (click)='update(pers)'>редактировать</button></td>
+    </tr>
+  </tbody>
+</table>
